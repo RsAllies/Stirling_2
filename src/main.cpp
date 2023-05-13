@@ -13,7 +13,7 @@ int stirling(int n, int k) {
 
 int main() {
     int n, k;
-    cin >> n >> k÷
+    cin >> n >> k;
     cout << "S(" << n << ", " << k << ") = " << stirling(n, k) << endl;
     
     return 0;
