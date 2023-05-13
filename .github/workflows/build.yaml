@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: g++ -o stirling_2.so -shared ./src/main.cpp
+        run: g++ -o stirling_2.so -shared ./src/main.cpp -fPIC
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
