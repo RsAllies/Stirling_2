@@ -1,0 +1,21 @@
+name: Build
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Visual Studio
+        uses: microsoft/setup-msbuild@v1.0.2
+      - name: Build
+        run: cl /EHsc ./src/main.cpp
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: main
+          path: main.exe
